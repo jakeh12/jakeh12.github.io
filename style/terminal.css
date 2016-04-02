@@ -13,6 +13,11 @@ span:focus
     outline: none !important;
 }
 
+span
+{
+    outline: none !important;
+}
+
 .terminal
 {
     width: 100vw;
