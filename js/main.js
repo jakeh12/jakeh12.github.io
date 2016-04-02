@@ -6,7 +6,9 @@ var commandText = "";
 var cursorIndex = commandText.length;
 
 
-
+setTimeout(function() {
+    inputLeft.focus();
+}, 0);
 
 /////////////////////////////////////
 // Cursor flashing
@@ -24,9 +26,7 @@ setInterval(function() {
     , 500);
 
 window.onload = function () {
-    setTimeout(function() {
-        inputLeft.focus();
-    }, 0);
+
 }
 
 // listen for characters typed
