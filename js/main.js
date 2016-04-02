@@ -2,6 +2,7 @@ var inputLeft = document.getElementById("left_input");
 var inputRight = document.getElementById("right_input");
 var inputCursor = document.getElementById("cursor");
 var terminalDiv = document.getElementById("terminal");
+var currentPrompt = document.getElementById("current_prompt");
 
 var commandText = "";
 var cursorIndex = commandText.length;
@@ -10,6 +11,8 @@ terminalDiv.onclick = (function() {
     inputLeft.focus();
     console.log("touch!");
 });
+
+//terminalDiv.children.reverse().add("test");
 
 /////////////////////////////////////
 // Cursor flashing
@@ -125,6 +128,15 @@ function backSpace()
 
 function submitCommand(command)
 {
-    console.log("command='"+ command + "'");
 
+    processCommand(command);
+
+    var historyPrompt = document.createElement("div");
+    historyPrompt.innerHTML = "<span class='prompt'>guest@jhladik.me:~</span><span class='prompt_dollar'>$&nbsp;</span><span class='input'>" + command + "</span>";
+    terminalDiv.insertBefore(historyPrompt, currentPrompt);
+}
+
+function processCommand(command)
+{
+    console.log("processing command: " + command);
 }
