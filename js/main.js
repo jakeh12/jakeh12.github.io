@@ -4,7 +4,7 @@ var inputCursor = document.getElementById("cursor");
 
 inputLeft.focus();
 
-var commandText = "";
+var commandText = String.fromCharCode(160);
 var cursorIndex = commandText.length;
 
 
