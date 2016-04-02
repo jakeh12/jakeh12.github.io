@@ -10,7 +10,7 @@
 
 span:focus
 {
-    outline: none !important;
+    /*outline: none !important;*/
 }
 
 .terminal

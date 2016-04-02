@@ -21,6 +21,13 @@ setInterval(function() {
     }
     , 500);
 
+window.onload = function () {
+    inputLeft.focus();
+}
+
+document.onclick = function () {
+    inputLeft.focus();
+}
 
 // listen for characters typed
 window.onkeypress = function (e) {
