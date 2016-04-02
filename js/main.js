@@ -1,12 +1,12 @@
 var inputLeft = document.getElementById("left_input");
 var inputRight = document.getElementById("right_input");
 var inputCursor = document.getElementById("cursor");
+var terminalDiv = document.getElementById('terminal');
 
 var commandText = "";
 var cursorIndex = commandText.length;
 
-
-
+terminalDiv.onclick = inputLeft.focus();
 
 /////////////////////////////////////
 // Cursor flashing
@@ -23,11 +23,7 @@ setInterval(function() {
     }
     , 500);
 
-window.onload = (function () {
-    setTimeout(function() {
-        inputLeft.focus();
-    }, 1000);
-    });
+window.onload = inputLeft.focus();
 
 // listen for characters typed
 window.onkeypress = (function (e) {
