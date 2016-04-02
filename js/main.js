@@ -23,14 +23,14 @@ setInterval(function() {
     }
     , 500);
 
-window.onload = function () {
+window.onload = (function () {
     setTimeout(function() {
         inputLeft.focus();
     }, 1000);
-}
+    });
 
 // listen for characters typed
-window.onkeypress = function (e) {
+window.onkeypress = (function (e) {
 
     if (e.charCode > 32 && e.charCode <= 126) {
         addCharByCursor(String.fromCharCode(parseInt(e.charCode)));
@@ -42,10 +42,10 @@ window.onkeypress = function (e) {
         e.preventDefault();
     }
     render();
-}
+});
 
 
-window.onkeydown = function (e) {
+window.onkeydown = (function (e) {
 
     if (e.keyCode == 37) // arrow left
     {
@@ -80,7 +80,7 @@ window.onkeydown = function (e) {
     }
     render();
 
-}
+});
 
 
 function render()
