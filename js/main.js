@@ -1,12 +1,15 @@
 var inputLeft = document.getElementById("left_input");
 var inputRight = document.getElementById("right_input");
 var inputCursor = document.getElementById("cursor");
-var terminalDiv = document.getElementById('terminal');
+var terminalDiv = document.getElementById("terminal");
 
 var commandText = "";
 var cursorIndex = commandText.length;
 
-terminalDiv.onclick = inputLeft.focus();
+terminalDiv.onclick = (function() {
+    inputLeft.focus();
+    console.log("touch!");
+});
 
 /////////////////////////////////////
 // Cursor flashing
