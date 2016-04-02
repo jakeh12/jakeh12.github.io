@@ -148,15 +148,60 @@ function printMessage(msg)
     }
 }
 
+function printLogo(logo)
+{
+    var responsePrompt = document.createElement("div");
+    responsePrompt.className="logo";
+    responsePrompt.innerHTML = logo.replace(/ /g, "&nbsp;").replace(/\n/g, "<br />");
+    terminalDiv.insertBefore(responsePrompt, currentPrompt);
+}
+
+printLogo(
+    "**********************************************\n"+
+    "   _  _    _         _  _  _                  \n"+
+    "  |_|| |_ | | ___  _| ||_|| |_     _____  ___ \n"+
+    "  | ||   || || .'|| . || || '_| _ |     || -_|\n"+
+    " _| ||_|_||_||__,||___||_||_,_||_||_|_|_||___|\n"+
+    "|___|                                         \n"+
+    "                                              \n"+
+    "             Welcome to my website!           \n"+
+    "                                              \n"+
+    "        Hint: Type 'help' and hit return.     \n"+
+    "**********************************************\n");
+
 
 function processCommand(command)
 {
-    var msg = "this is a test\nwith multiple lines!";
-    printMessage(msg);
     console.log("processing command: " + command);
+
+    switch(command)
+    {
+        case "exit":
+            window.close();
+            break;
+        case "ls":
+            printMessage("TERMINAL SHOULD LS WITH THIS COMMAND...");
+            break;
+        case "cd":
+            printMessage("TERMINAL SHOULD CD WITH THIS COMMAND...");
+            break;
+        case "clear":
+            printMessage("TERMINAL SHOULD CLEAR WITH THIS COMMAND...");
+            break;
+        case "test":
+            printMessage("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+            break;
+        default:
+            printMessage("ERROR: Invalid command ٩(͡๏̯͡๏)۶");
+        case "help":
+            printMessage(
+                "This web app emulates a terminal.\n" +
+                "'ls' - list all pages \n"+
+                "'cd [name]' - select page\n"+
+                "'test' - lorem ipsum\n"+
+                "'clear' - clears the terminal\n"+
+                "'exit' - closes the window\n"
+                );
+            break;
+    }
 }
-
-
-
-// print welcome message
-printMessage("Welcome to my website! Use it like a terminal!\nType 'help' and press 'Enter' for help.");
