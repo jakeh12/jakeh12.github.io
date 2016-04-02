@@ -8,7 +8,7 @@ var cursorIndex = commandText.length;
 
 setTimeout(function() {
     inputLeft.focus();
-}, 0);
+}, 1000);
 
 /////////////////////////////////////
 // Cursor flashing
