@@ -106,7 +106,6 @@ function render()
     // render right
 
     inputRight.textContent = commandText.slice(cursorIndex+1, commandText.length);
-
 }
 
 function addCharByCursor(char) {
@@ -129,14 +128,35 @@ function backSpace()
 function submitCommand(command)
 {
 
-    processCommand(command);
-
     var historyPrompt = document.createElement("div");
     historyPrompt.innerHTML = "<span class='prompt'>guest@jhladik.me:~</span><span class='prompt_dollar'>$&nbsp;</span><span class='input'>" + command + "</span>";
     terminalDiv.insertBefore(historyPrompt, currentPrompt);
+    processCommand(command);
+
 }
+
+function printMessage(msg)
+{
+    var responsePrompt = document.createElement("div");
+    responsePrompt.innerHTML = msg.replace(/\n/g, "<br />");
+    terminalDiv.insertBefore(responsePrompt, currentPrompt);
+
+    // scroll to the bottom if off-screen
+    if ((currentPrompt.offsetTop+currentPrompt.offsetHeight) > window.innerHeight)
+    {
+        window.scrollTo(0,terminalDiv.scrollHeight);
+    }
+}
+
 
 function processCommand(command)
 {
+    var msg = "this is a test\nwith multiple lines!";
+    printMessage(msg);
     console.log("processing command: " + command);
 }
+
+
+
+// print welcome message
+printMessage("Welcome to my website! Use it like a terminal!\nType 'help' and press 'Enter' for help.");
