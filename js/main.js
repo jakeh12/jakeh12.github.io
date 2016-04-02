@@ -2,11 +2,7 @@ var inputLeft = document.getElementById("left_input");
 var inputRight = document.getElementById("right_input");
 var inputCursor = document.getElementById("cursor");
 
-window.onload = function() {
-    inputLeft.focus();
-}
-
-var commandText = String.fromCharCode(160);
+var commandText = "";
 var cursorIndex = commandText.length;
 
 
